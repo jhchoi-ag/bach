@@ -59,7 +59,7 @@ class DashinAccount(Account):
         gLog.info("allowed request TRADE:{0} SELECT:{1}, SUBS:{2}, until {3} s"
             .format(self._instCpCybos.GetLimitRemainCount(LT_TRADE_REQUEST)
                 ,self._instCpCybos.GetLimitRemainCount(LT_NONTRADE_REQUEST)
-                ,self._instCpCybos.GetLimitRemainCount(LT_SUBSCRIBE),
+                ,self._instCpCybos.GetLimitRemainCount(LT_SUBSCRIBE)
                 ,self._instCpCybos.LimitRequestRemainTime / 1000)
                 )
 
@@ -119,4 +119,4 @@ if __name__ == '__main__':
     ret = stockmgr.getMarketKind(MARKET_TYPE['KOSDAQ'])
 
     for i in ret:
-        gLog.info(l)
+        gLog.info(i)
