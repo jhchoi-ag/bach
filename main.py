@@ -154,8 +154,9 @@ class Stock(object):
         #    raw.append(k + ':' + str(v))
         for k, v in self._datas.items():
             raw.append('Collected:'+ k)
-            for sub_k, sub_v in v.items():
-                raw.append( sub_k + ':' + str(sub_v))
+            for _, sub_v in v.items():
+                #raw.append( sub_k + ':' + str(sub_v))
+                raw.append(str(sub_v))
         return ','.join(raw)
 
 class CollectMarket(object):
@@ -274,7 +275,7 @@ class TargetCodes(object):
     def __init__(self):
         self._allow_supervisionKind = {0} # 0: 일반종목, 1: 관리
         self._allow_statusKind = {0} # 0: 정상종목, 1: 거래정지, 2:거래중단
-        self._allow_stockCapital = {1,2} # 0: 제외, 1: 대형, 2:중형, 3:소형
+        self._allow_stockCapital = {1,2,3} # 0: 제외, 1: 대형, 2:중형, 3:소형
         self._allow_stockSectionKind = {1} # 11: 수익증권, 1:주권, 2:투자회사, 14:선물, ..
         self._allow_stockLacKind = {0} # 0: 구분없음, 1: 권리락, 2: 배당락, 3:분배락, ...
 
