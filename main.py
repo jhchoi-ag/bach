@@ -274,7 +274,7 @@ class TargetCodes(object):
     def __init__(self):
         self._allow_supervisionKind = {0} # 0: 일반종목, 1: 관리
         self._allow_statusKind = {0} # 0: 정상종목, 1: 거래정지, 2:거래중단
-        self._allow_stockCapital = {1,2,3} # 0: 제외, 1: 대형, 2:중형, 3:소형
+        self._allow_stockCapital = {1,2} # 0: 제외, 1: 대형, 2:중형, 3:소형
         self._allow_stockSectionKind = {1} # 11: 수익증권, 1:주권, 2:투자회사, 14:선물, ..
         self._allow_stockLacKind = {0} # 0: 구분없음, 1: 권리락, 2: 배당락, 3:분배락, ...
 
@@ -343,15 +343,11 @@ if __name__ == '__main__':
             continue
 
         # 8시 20분 ~ 18:10분 까지..
-        if now.hour < 8 or now.hour > 18:
+        if now.hour < 8 or now.hour > 16:
             time.sleep(60)
             continue
 
-        if now.hour == 8 and now.minute < 20:
-            time.sleep(60)
-            continue
-
-        if now.hour == 18 and now.minute > 10:
+        if now.hour == 8 and now.minute < 50:
             time.sleep(60)
             continue
 
