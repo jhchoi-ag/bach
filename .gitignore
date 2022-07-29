@@ -1,0 +1,5 @@
+log/
+*.pyc
+*.zip
+*.log
+.DS_Store
