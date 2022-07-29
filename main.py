@@ -343,11 +343,15 @@ if __name__ == '__main__':
             continue
 
         # 8시 20분 ~ 18:10분 까지..
-        if now.hour < 8 or now.hour > 16:
+        if now.hour < 8 or now.hour > 17:
             time.sleep(60)
             continue
 
-        if now.hour == 8 and now.minute < 50:
+        if now.hour == 8 and now.minute < 20:
+            time.sleep(60)
+            continue
+
+        if now.hour == 16 and now.minute > 10:
             time.sleep(60)
             continue
 
