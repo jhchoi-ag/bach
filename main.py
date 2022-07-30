@@ -233,7 +233,7 @@ class CollectMarket(object):
         step = 200 # 한번에 최대 200 까지 읽을 수 있데요.
         print('--debug:', collected_at, len(stocks))
         result_list = []
-        for i in range(int(len(stocks)/step)):
+        for i in range(int(len(stocks)/step)+1):
             sub_list = stocks[step*i:step*(i+1)]
             if not self.request(sub_list):
                 continue
