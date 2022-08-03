@@ -348,7 +348,7 @@ if __name__ == '__main__':
             time.sleep(60)
             continue
 
-        if now.hour == 8 and now.minute < 20:
+        if now.hour == 8 and now.minute < 40:
             time.sleep(60)
             continue
 
