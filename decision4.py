@@ -392,11 +392,14 @@ class Handel:
         #self.archives_5m = Archives([1,2,3,5,8]) # Item 의  List, N/A
         #self.archives_5m = Archives([2,3,5,13]) # Item 의  List, -22.90, -228.967, 씨에스베어링, 대주전자재료 등 총 222회 거래
         #self.archives_5m = Archives([2,3,5,7,13]) # Item 의  List, -1.18, -11,787
-        self.archives_5m = Archives([1,5,10,15]) # Item 의  List, +2.69, +26,884 휴림로봇, 원티드랩, 포스코엠텍, 에스티팜, 아바텍 등
+        #self.archives_5m = Archives([1,5,10,15]) # Item 의  List, +2.69, +26,884 휴림로봇, 원티드랩, 포스코엠텍, 에스티팜, 아바텍 등
         #self.archives_5m = Archives([1,4,8,12]) # Item 의  List, +0.75, +7,546 휴림로봇, 에스에프에이 등
         #self.archives_5m = Archives([1,6,12,18]) # Item 의  Lis등, -4.47, -44,704 로보티즈, 레인보우로보틱스 등
 
         #self.archives_4m = Archives([1,4,8,12]) # Item 의  List
+        #self.archives_5m = Archives([1,4,12,24]) # Item 의  List, -8.35, -83,453
+
+        self.archives_5m = Archives([1,5,10,15]) # Item 의  List, +2.69, +26,884 휴림로봇, 원티드랩, 포스코엠텍, 에스티팜, 아바텍 등
         self.archives_4m = Archives([1,3,5,7]) # Item 의  List
         self.archives = defaultdict(Archive) # Item 의  List
         self.trader = Trader()
@@ -405,10 +408,10 @@ class Handel:
         self.no_buying_rise_rate = 12.0
 
         # 최고가 대비, diff_highest_rate 보다 낮으면 매도.
-        self.diff_highest_rate = OrderedDict({60:-3.0, 120:-2.0, 180:-1.5, 181:-1.0})
+        self.diff_highest_rate = OrderedDict({60:-3.0, 120:-1.5})
         #self.diff_highest_rate = OrderedDict({180:-5.0, 181:-1.0})
         # 매수가 대비, diff_buying_rate 보다 낮으면 매도.
-        self.diff_buying_rate = -2.0
+        self.diff_buying_rate = -1.5
 
     def is_no_buying(self, record):
         if record.market_cap < G_LESS_CAPITAL:
